@@ -57,7 +57,8 @@ def printGuessAccuracy(guess, actual):
 def getSixLetterInput():
   # Create input for user
   userGuess = ""
-  
+
+  # Create the parameters for guess length
   while len(userGuess) != 6:
     userGuess = input("Enter a six letter word: ")
   print()
@@ -68,6 +69,8 @@ def getSixLetterInput():
 ### Main Program ###
 
 # TO-DO: Write the logic of the game here!
+
+# Print Header
 print(r"""
 
 WW      WW                    dd    PPPPPP  lll                 
@@ -98,13 +101,16 @@ guess = ""
 # Keep Track of Attempts 
 countAttempts = 0
 
-# Create a loop to keep track of attempts
-while countAttempts <6 and guess != secretWord:
+# Create a loop to keep track of attempts and guesses 
+while countAttempts <5 and guess != secretWord:
   
   guess = getSixLetterInput()
-  print()
+  # create print to show guess accuracy with secret word
   printGuessAccuracy(guess , secretWord)
+  # Finish counting attempts
   countAttempts += 1
+  print()
+  print()
 
 # Congratulate or tell user they lost or won
 if guess == secretWord:
